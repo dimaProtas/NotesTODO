@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'app.apps.AppConfig',
-    'app.todo.TodoConfig'
+    'todo.apps.TodoConfig'
 
 ]
 
