@@ -16,3 +16,4 @@ class Todo(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, models.PROTECT)
+    active = models.BooleanField(default=True)
