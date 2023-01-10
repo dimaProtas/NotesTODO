@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from app.views import UsersModelViewSet
+from todo.views import ProjectModelViewSet, TodotModelViewSet
 
 
 router = DefaultRouter()
 router.register('users', UsersModelViewSet)
+router.register('project', ProjectModelViewSet)
+router.register('todo', TodotModelViewSet)
 
 
 urlpatterns = [
