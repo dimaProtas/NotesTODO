@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import Navbar from './components/navbar/Navbar.jsx';
 import Footer from './components/footer/Footer.jsx';
 import style from './index.css';
