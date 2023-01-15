@@ -23,7 +23,7 @@ from todo.views import ProjectModelViewSet, TodotModelViewSet
 router = DefaultRouter()
 router.register('users', UsersCustomViewSet)
 router.register('project', ProjectModelViewSet)
-router.register('todo', TodotModelViewSet)
+router.register('todo', TodotModelViewSet, basename='todo')
 
 
 urlpatterns = [

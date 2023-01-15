@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import HyperlinkedModelSerializer, ModelSerializer
 from .models import Todo, Project
 from app.serializers import UsersModelSerializer
 
@@ -14,8 +14,8 @@ class ProjectModelSerializer(HyperlinkedModelSerializer):
 
 
 class TodoModelSerializer(HyperlinkedModelSerializer):
-    project = ProjectModelSerializer() #Вывожу инвормацию о проекте(удалить строку, что бы получить ссылку project)
-    user = UsersModelSerializer() #Имя пользователя создавшего запись(удалить строку, что бы получить ссылку user)
+    project = ProjectModelSerializer(read_only=True) #Вывожу инвормацию о проекте(удалить строку, что бы получить ссылку project)
+    user = UsersModelSerializer(read_only=True) #Имя пользователя создавшего запись(удалить строку, что бы получить ссылку user)
     class Meta:
         model = Todo
         fields = '__all__'
