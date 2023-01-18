@@ -6,17 +6,7 @@ const NAvbar = () => {
     <header className={style.footer}>
         <div className='container'>
             <div className={style.box}>
-                <ul className={style.menu}>
-                    <li>
-                        <a href="##">Main</a>
-                    </li>
-                    <li>
-                        <a href="##">Users</a>
-                    </li>
-                    <li>
-                        <a href="##">Contacts</a>
-                    </li>
-                </ul>
+                Платформа для заметок.
             </div>
         </div>
     </header>
