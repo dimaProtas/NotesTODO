@@ -9,7 +9,7 @@ const NAvbar = () => {
             <div className={style.box}>
                 <ul className={style.menu}>
                     <li>
-                        <NavLink to="##">Main</NavLink>
+                        <NavLink to="/main">Main</NavLink>
                     </li>
                     <li>
                         <NavLink to="/">Users</NavLink>

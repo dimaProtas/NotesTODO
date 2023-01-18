@@ -17,3 +17,8 @@
     line-height: 28px;
     gap: 30px;
 }
+
+.menu li:hover {
+    transform: scale(1.2);
+    color: grey;
+}

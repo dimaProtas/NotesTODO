@@ -6,6 +6,12 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: gray;
+    background-color: #134b57;
+}
+
+body {
+    background-color: #D8BFD8;
+    width: 80%;
+    margin: 0 auto;
 }
 
