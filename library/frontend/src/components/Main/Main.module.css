@@ -1,0 +1,58 @@
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    margin: 0 auto;
+}
+
+.box form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 40%;
+}
+
+form input:not([type="checkbox"]),
+form textarea,
+form button {
+    width: 90%;
+    padding: 15px 5%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border: 0;
+    background: #222;
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+}
+
+aside form input[type="checkbox"] {
+    margin: 10px;
+}
+
+aside form button {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+aside form button:hover {
+    transform: scale(1.1);
+}
+
+.box form {
+    margin-top: 20px;
+}
+
+.box form input,
+.box form textarea,
+.box form button {
+    background: #134b57;
+}
+
+.box form button:hover {
+    transform: scale(1.01);
+}
