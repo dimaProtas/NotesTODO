@@ -1,16 +1,16 @@
 import React from 'react';
-import style from './item_todo.module.css';
-import {Link} from 'react-router-dom'
+import style from './UserTodo.module.css';
+import { useParams } from 'react-router-dom'
 
 
-const TodoItem = ({item}) => {
+const UserItem = ({item}) => {
     return (
         <tr>
             <td>
                 {item.project.name}
             </td>
             <td>
-                <Link to={`/${item.user.id}`}>{item.user.username}</Link>
+                {item.user.username}
             </td>
             <td>
                 {item.text}
@@ -28,7 +28,9 @@ const TodoItem = ({item}) => {
     )
 }
 
-const TodoList = ({todos}) => {
+const UserTodo = ({items_user}) => {
+    let { id } = useParams();
+    let filtered_items = items_user.filter((item) => item.user.id == id)
     return (
         <div className={style.box}>
             <table>
@@ -40,10 +42,10 @@ const TodoList = ({todos}) => {
                     <th>Update</th>
                     <th>Active</th>
                 </tr>
-                {todos.map((item) => <TodoItem item={item} />)}
+                {filtered_items.map((item) => <UserItem item={item} />)}
             </table>
         </div>
     )
 }
 
-export default TodoList
+export default UserTodo

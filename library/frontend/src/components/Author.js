@@ -1,9 +1,14 @@
 import React from 'react';
 import style from './Authors.module.css';
+import {Link} from 'react-router-dom'
+
 
 const UserItem = ({user}) => {
     return (
         <tr>
+            <td>
+                <Link to={`/${user.id}`}>{user.id}</Link>
+            </td>
             <td>
                 {user.username}
             </td>
@@ -24,6 +29,9 @@ const UserList = ({users}) => {
     return (
         <div className={style.box}>
             <table>
+                <th>
+                    ID
+                </th>
                 <th>
                     Login
                 </th>
