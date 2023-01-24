@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Navbar.module.css';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 const NAvbar = () => {
     return (
@@ -19,6 +19,9 @@ const NAvbar = () => {
                     </li>
                     <li>
                         <NavLink to="/todos">Todos</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/login">Login</NavLink>
                     </li>
                 </ul>
             </div>
