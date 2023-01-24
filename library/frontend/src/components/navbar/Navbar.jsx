@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 
-const NAvbar = () => {
+const Navbar = ({auth, logout}) => {
     return (
     <header className={style.header}>
         <div className='container'>
@@ -21,7 +21,7 @@ const NAvbar = () => {
                         <NavLink to="/todos">Todos</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/login">Login</NavLink>
+                        {auth()  ? <button onClick={()=> logout()}>Logout</button> : <NavLink to="/login">Login</NavLink>}
                     </li>
                 </ul>
             </div>
@@ -30,4 +30,4 @@ const NAvbar = () => {
     )
 }
 
-export default NAvbar
+export default Navbar
