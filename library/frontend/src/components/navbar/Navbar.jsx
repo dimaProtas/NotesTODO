@@ -20,9 +20,12 @@ const Navbar = ({auth, logout}) => {
                     <li>
                         <NavLink to="/todos">Todos</NavLink>
                     </li>
-                    <li>
-                        {auth()  ? <button onClick={()=> logout()}>Logout</button> : <NavLink to="/login">Login</NavLink>}
-                    </li>
+                    <div  className={style.logout}>
+                        <li>
+                            {auth()  ? <button onClick={()=> logout()}>Logout</button> : <NavLink to="/login">Login</NavLink>}
+                        </li>
+                    </div>
+
                 </ul>
             </div>
         </div>

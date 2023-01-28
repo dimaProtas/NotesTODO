@@ -26,7 +26,7 @@ class TodoLimitOffSetPagination(LimitOffsetPagination):
 
 
 class TodotModelViewSet(ModelViewSet):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     queryset = Todo.objects.all()
     serializer_class = TodoModelSerializer
     pagination_class = TodoLimitOffSetPagination

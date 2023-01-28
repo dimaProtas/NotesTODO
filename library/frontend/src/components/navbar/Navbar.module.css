@@ -22,3 +22,19 @@
     transform: scale(1.2);
     color: grey;
 }
+
+.logout {
+    position: absolute;
+    right: 150px;
+}
+
+.logout button {
+    background: #134b57;
+    color: white;
+    padding: 8px 20px;
+    border: 0;
+}
+
+.logout button:hover {
+    background: red;
+}

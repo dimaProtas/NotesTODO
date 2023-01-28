@@ -99,12 +99,12 @@ class App extends React.Component {
     }
 
     get_token(username, password) {
+        debugger;
         axios.post('http://127.0.0.1:8000/api-token-auth/', {username: username, password: password})
             .then(response => {
             this.set_token(response.data['token'])
         }).catch(error => alert('Неверный логин или пароль'))
     }
-
 
     componentDidMount() {
         this.get_token_from_storage()
@@ -115,7 +115,7 @@ class App extends React.Component {
     render () {
         return (
             <BrowserRouter>
-                <Navbar auth={this.is_authenticated} logout={this.logout} />
+                <Navbar auth={this.is_authenticated} logout={this.logout} userName={this.userName} />
                 <Routes>
                     <Route path='/' element={<UserList users={this.state.users} />} />
                     <Route path='/projects' element={<ProjectList items={this.state.items} />} />
