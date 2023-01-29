@@ -19,3 +19,9 @@ class TodoModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Todo
         fields = '__all__'
+
+
+class TodoModelSerializerBase(HyperlinkedModelSerializer):
+    class Meta:
+        model = Todo
+        fields = '__all__'
