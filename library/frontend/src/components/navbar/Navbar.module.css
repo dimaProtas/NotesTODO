@@ -1,0 +1,40 @@
+.header {
+    width: 100%;
+}
+
+.box {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    margin-bottom: 30px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    line-height: 28px;
+    gap: 30px;
+}
+
+.menu li:hover {
+    transform: scale(1.2);
+    color: grey;
+}
+
+.logout {
+    position: absolute;
+    right: 150px;
+}
+
+.logout button {
+    background: #134b57;
+    color: white;
+    padding: 8px 20px;
+    border: 0;
+}
+
+.logout button:hover {
+    background: red;
+}
