@@ -129,6 +129,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
+AUTH_USER_MODEL = 'app.UserAbstract'
+
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
             'rest_framework.renderers.BrowsableAPIRenderer', # add this first(стандартный вывод).
@@ -145,7 +147,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-]
+],
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
+    # 'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
 
 }
 

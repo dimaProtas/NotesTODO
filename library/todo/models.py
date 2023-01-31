@@ -1,11 +1,11 @@
 from django.db import models
-from app.models import Users
+from app.models import UserAbstract
 
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
     link = models.CharField(max_length=250, blank=True)
-    users = models.ManyToManyField(Users)
+    users = models.ManyToManyField(UserAbstract)
 
     def __str__(self):
         return self.name
@@ -20,7 +20,7 @@ class Todo(models.Model):
     text = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(Users, models.PROTECT)
+    user = models.ForeignKey(UserAbstract, models.PROTECT)
     active = models.BooleanField(default=True)
 
     class Meta:
