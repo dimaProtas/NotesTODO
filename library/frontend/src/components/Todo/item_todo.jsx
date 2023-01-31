@@ -22,7 +22,7 @@ const TodoItem = ({item}) => {
                 {item.updated_at}
             </td>
             <td>
-                {item.active}
+                {item.active ? 'Yes' : 'No'}
             </td>
         </tr>
     )

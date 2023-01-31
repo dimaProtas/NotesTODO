@@ -76,7 +76,7 @@ class App extends React.Component {
                 )
             }).catch(error => console.log(error))
 
-        axios.get('http://127.0.0.1:8000/api/users/', {headers})
+        axios.get('http://127.0.0.1:8000/api/1.0/users/', {headers})
             .then(response => {
                 const users = response.data
                     this.setState(
