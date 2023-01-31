@@ -14,8 +14,45 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include, re_path
+from rest_framework.authtoken import views
+from rest_framework.routers import DefaultRouter
+from app.views import UsersCustomViewSet
+from todo.views import ProjectModelViewSet, TodotModelViewSet
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Library",
+        default_version='0.1',
+        description="Documentation to out project",
+        contact=openapi.Contact(email="admin@admin.local"),
+        license=openapi.License(name="MIT License"),
+    ),
+    public=True,
+)
+
+
+
+router = DefaultRouter()
+router.register('users', UsersCustomViewSet)
+router.register('project', ProjectModelViewSet)
+router.register('todo', TodotModelViewSet, basename='todo')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-users/', include('rest_framework.urls')),
+    path('api/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
+    re_path(r'^api/(?P<version>\d\.\d)/users/$', UsersCustomViewSet.as_view({'get': 'list'})),
+    # path('api/users/1.0', include('app.urls', namespace='1.0')),
+    # path('api/users/1.1', include('app.urls', namespace='1.1')),
+    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
+
 ]
