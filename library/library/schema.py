@@ -51,4 +51,24 @@ class Query(graphene.ObjectType):
         return todo
 
 
-schema = graphene.Schema(query=Query)
+class TodoMutation(graphene.Mutation):
+    class Arguments:
+        active = graphene.Boolean(required=True)
+        id = graphene.ID()
+
+    todo = graphene.Field(TodoType)
+
+    @classmethod
+    def mutate(cls, root, info, active, id):
+        todo = Todo.objects.get(id=id)
+        todo.active = active
+        todo.save()
+        return TodoMutation(todo=todo)
+
+
+class Mutation(graphene.ObjectType):
+    update_todo = TodoMutation.Field()
+
+
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
