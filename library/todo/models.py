@@ -16,7 +16,7 @@ class Project(models.Model):
 
 
 class Todo(models.Model):
-    project = models.ForeignKey(Project, models.PROTECT)
+    project = models.ForeignKey(Project, models.CASCADE)
     text = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

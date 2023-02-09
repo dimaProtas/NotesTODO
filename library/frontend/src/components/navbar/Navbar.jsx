@@ -9,9 +9,6 @@ const Navbar = ({auth, logout}) => {
             <div className={style.box}>
                 <ul className={style.menu}>
                     <li>
-                        <NavLink to="/main">Main</NavLink>
-                    </li>
-                    <li>
                         <NavLink to="/">Users</NavLink>
                     </li>
                     <li>
@@ -19,6 +16,9 @@ const Navbar = ({auth, logout}) => {
                     </li>
                     <li>
                         <NavLink to="/todos">Todos</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/search">Search</NavLink>
                     </li>
                     <div  className={style.logout}>
                         <li>

@@ -10,7 +10,7 @@ const UserItem = ({user}) => {
                 <Link to={`/${user.id}`}>{user.id}</Link>
             </td>
             <td>
-                {user.username}
+                <Link to={`/${user.id}`}>{user.username}</Link>
             </td>
             <td>
                 {user.firstname}

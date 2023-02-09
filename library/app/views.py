@@ -13,11 +13,11 @@ class UsersCustomViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixin
     queryset = UserAbstract.objects.all()
     serializer_class = UsersModelSerializerBase
 
-    def get_serializer_class(self):
-        if self.request.version == '1.0':
-            return UsersModelSerializer
-        elif self.request.version == '1.1':
-            return UsersModelSerializerBase
+    # def get_serializer_class(self):
+    #     if self.request.version == '1.0':
+    #         return UsersModelSerializer
+    #     elif self.request.version == '1.1':
+    #         return UsersModelSerializerBase
 
 # class UsersModelViewSet(ModelViewSet):
 #     queryset = Users.objects.all()

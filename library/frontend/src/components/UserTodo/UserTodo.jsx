@@ -16,13 +16,13 @@ const UserItem = ({item}) => {
                 {item.text}
             </td>
             <td>
-                {item.created_at}
+                {item.created_at.slice(0,10)}
             </td>
             <td>
-                {item.updated_at}
+                {item.updated_at.slice(11, 16)} {item.updated_at.slice(0,10)}
             </td>
             <td>
-                {item.active}
+                {item.active ? 'Yes' : 'No'}
             </td>
         </tr>
     )

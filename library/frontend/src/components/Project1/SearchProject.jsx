@@ -1,8 +1,9 @@
 import React from 'react';
-import style from './Project.module.css';
 import {Link} from 'react-router-dom';
+import style from './Project.module.css';
+import SearchForm from './SearchForm/SearchForm.jsx';
 
-const ProjectItem = ({item, deleteProject}) => {
+const ProjectItem = ({item}) => {
     return (
         <tr>
             <td>
@@ -15,15 +16,15 @@ const ProjectItem = ({item, deleteProject}) => {
                 {item.link}
             </td>
             <td className={style.del}>
-                <button type='button' onClick={() => deleteProject(item.id)}>delete</button>
             </td>
         </tr>
     )
 }
 
-const ProjectList = ({items, deleteProject}) => {
+const SearchProject = ({search, searchProject}) => {
     return (
         <div>
+        <SearchForm searchProject={searchProject} />
             <div className={style.box}>
                 <table>
                     <tr>
@@ -31,13 +32,12 @@ const ProjectList = ({items, deleteProject}) => {
                         <th>Name project</th>
                         <th>Link project</th>
                     </tr>
-                    {items.map((item) => <ProjectItem item={item} deleteProject={deleteProject} />)}
+                    {search.map((item) => <ProjectItem item={item} />)}
                 </table>
             </div>
-            <Link className={style.create} to='/projects/create'>Create</Link>
         </div>
     )
 }
 
 
-export default ProjectList
+export default SearchProject
