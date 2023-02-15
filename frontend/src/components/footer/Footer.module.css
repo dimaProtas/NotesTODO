@@ -1,0 +1,18 @@
+.footer {
+    width: 100%;
+}
+
+.box {
+    margin-top: 65px;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid grey;
+}
+
+.menu {
+    font-size: 11px;
+    line-height: 15px;
+    gap: 17px;
+    align-items: unset;
+}

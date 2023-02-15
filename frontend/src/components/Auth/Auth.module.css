@@ -1,0 +1,14 @@
+form {
+    margin-left: 80px;
+    margin-right: -10px;
+}
+
+form .button:hover {
+    transform: scale(1.02);
+    background: grey;
+}
+
+.login h1{
+
+    transform: translate(35%, -35%)
+}
